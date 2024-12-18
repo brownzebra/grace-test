@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package test;
+
+// Specify the Go package for generated files
+option go_package = "github.com/brownzebra/grpc-test/proto";
+
+service TestService {
+  rpc SendMessage (TestRequest) returns (TestResponse);
+}
+
+message TestRequest {
+  bytes payload = 1;
+}
+
+message TestResponse {
+  string message = 1;
+}
+
